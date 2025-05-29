@@ -1,4 +1,3 @@
-import 'package:ecommerce/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +11,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const Scaffold(body: Column(children: [Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Text('hello',style: TextStyle(fontWeight: FontWeight.bold),),
+      )
+      ],),),
     );
   }
 }

@@ -21,5 +21,13 @@ class AppWidget{
        fontFamily: 'Italianno');
 
   }
+ static TextStyle lightTextFieldStyle(){
+    return TextStyle(
+      color:
+       Colors.black,
+       fontSize: 18.0,
+       fontWeight: FontWeight.w100,
+       fontFamily: 'Italianno');
 
+  }
 }

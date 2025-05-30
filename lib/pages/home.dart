@@ -32,8 +32,18 @@ class _HomeState extends State<Home> {
               ],
             ),
             SizedBox(height: 10,),
-            Text("Delicious Food",style: AppWidget.headlineTextFieldStyle(),)
-           
+            Text("Delicious Food",
+            style: AppWidget.headlineTextFieldStyle(),
+            ),
+
+            Text("Discover and Get Great Food",
+            style: AppWidget.lightTextFieldStyle(),
+            ),
+            Row(children: [
+              Container(
+                child: Image.asset("images/burger.png",height: 50,width: 50,fit: BoxFit.cover,),
+              )
+            ],)
           ],
         ),
       ),

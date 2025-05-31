@@ -37,12 +37,44 @@ class _HomeState extends State<Home> {
             ),
 
             Text("Discover and Get Great Food",
-            style: AppWidget.lightTextFieldStyle(),
+            style: AppWidget.lightTextFieldStyle()
             ),
-            Row(children: [
-              Container(
-                child: Image.asset("images/burger.png",height: 50,width: 50,fit: BoxFit.cover,),
-              )
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [            
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset("images/icecream.png",height: 50,width: 50,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset("images/noodles.png",height: 50,width: 50,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset("images/combo_set.png",height: 50,width: 50,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Image.asset("images/burger.png",height: 50,width: 50,fit: BoxFit.cover,),
+                ),
+              ),
             ],)
           ],
         ),

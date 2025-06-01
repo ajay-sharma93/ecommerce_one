@@ -8,7 +8,12 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+
+
 class _HomeState extends State<Home> {
+
+
+  bool icecream=false, noodles=false,combo=false,burger=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,20 +48,33 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [            
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset("images/icecream.png",height: 50,width: 50,fit: BoxFit.cover,),
+              GestureDetector(
+                onTap: (){
+                  icecream=false;
+                  combo=false;
+                  noodles=false;
+                  burger=true;
+                  setState(() {
+                    
+                  });
+                },
+                child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    decoration: BoxDecoration(color: icecream?Colors.black:Colors.black,borderRadius: BorderRadius.circular(10)),
+                    padding: EdgeInsets.all(10),
+                    child: Image.asset("images/icecream.png",height: 50,width: 50,fit: BoxFit.cover,color:icecream? Colors.white:Colors.white,),
+                  ),
                 ),
               ),
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
+                  decoration: BoxDecoration(color: noodles?Colors.transparent:Colors.black,borderRadius: BorderRadius.circular(10)),
                   padding: EdgeInsets.all(10),
-                  child: Image.asset("images/noodles.png",height: 50,width: 50,fit: BoxFit.cover,),
+                  child: Image.asset("images/noodles.png",height: 50,width: 50,fit: BoxFit.cover,color:noodles? Colors.white:Colors.white,),
                 ),
               ),
               Material(

@@ -1,5 +1,6 @@
 import 'package:ecommerce/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
 
-  bool icecream=false, noodles=false,combo=false,burger=false;
+  bool icecream=false, pizza=false,salad=false,burger=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,53 +48,46 @@ class _HomeState extends State<Home> {
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [            
-              GestureDetector(
-                onTap: (){
-                  icecream=false;
-                  combo=false;
-                  noodles=false;
-                  burger=true;
-                  setState(() {
-                    
-                  });
-                },
-                child: Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    decoration: BoxDecoration(color: icecream?Colors.black:Colors.black,borderRadius: BorderRadius.circular(10)),
-                    padding: EdgeInsets.all(10),
-                    child: Image.asset("images/icecream.png",height: 50,width: 50,fit: BoxFit.cover,color:icecream? Colors.white:Colors.white,),
-                  ),
+            children: [
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  child: SvgPicture.asset('images/svg/ice.svg',height: 50,width: 50,),
                 ),
               ),
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  decoration: BoxDecoration(color: noodles?Colors.transparent:Colors.black,borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset("images/noodles.png",height: 50,width: 50,fit: BoxFit.cover,color:noodles? Colors.white:Colors.white,),
+                  padding: EdgeInsets.all(8),
+                  child: SvgPicture.asset('images/svg/burger1.svg',height: 50,width: 50,),
                 ),
               ),
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset("images/combo_set.png",height: 50,width: 50,fit: BoxFit.cover,),
+                  padding: EdgeInsets.all(8),
+                  child: SvgPicture.asset('images/svg/salad.svg',height: 50,width: 50,),
                 ),
               ),
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Image.asset("images/burger.png",height: 50,width: 50,fit: BoxFit.cover,),
+                  padding: EdgeInsets.all(8),
+                  child: SvgPicture.asset('images/svg/pizza.svg',height: 50,width: 50,),
                 ),
               ),
-            ],)
+            ],
+                
+                 
+              
+              ),
+             
+           
           ],
         ),
       ),

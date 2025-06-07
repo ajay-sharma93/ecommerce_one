@@ -46,7 +46,112 @@ class _HomeState extends State<Home> {
             style: AppWidget.lightTextFieldStyle()
             ),
             SizedBox(height: 10),
-            Row(
+            showItem(),
+            SizedBox(height: 20,),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [           
+                Container(
+                  margin: EdgeInsets.all(8),
+                  child: Material(
+                    borderRadius: BorderRadius.circular(15),
+                    elevation: 6.0,
+                    child: Container(
+                     padding: EdgeInsets.all(15),                
+                      child:                
+                      Column(               
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [                   
+                      Image.asset("images/katti_rol.png",
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.cover,
+                      ),
+                      Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
+                    
+                    ]),
+                    ),
+                  ),
+                ),  
+                SizedBox(width: 10,),
+                 Material(
+                  borderRadius: BorderRadius.circular(15),
+                  elevation: 6.0,
+                  child: Container(
+                   padding: EdgeInsets.all(15),                
+                    child:                
+                    Column(               
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [                   
+                    Image.asset("images/katti_rol.png",
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                    ),
+                    Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
+                  
+                  ]),
+                  ),
+                ),  
+                SizedBox(width: 15,),                        
+                 Material(
+                  borderRadius: BorderRadius.circular(15),
+                  elevation: 6.0,
+                  child: Container(
+                   padding: EdgeInsets.all(15),                
+                    child:                
+                    Column(               
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [                   
+                    Image.asset("images/katti_rol.png",
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                    ),
+                    Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),                
+                  ]),
+                  ),
+                ),  
+              ],
+              ),
+            ), 
+            SizedBox(width: 20,), 
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset("images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+                  ),
+                 SizedBox(width: 20,),
+                 Column(children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width/2,
+                    child: Text("Mustang Aalau sweetly marinated",style: AppWidget.semiBoldTextFieldStyle(),),
+                  )
+                 ],)
+                ],
+              ),
+            ), 
+          ],
+        ),
+      ),
+    );
+  }
+  Widget showItem(){
+    return  Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
@@ -134,16 +239,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-            ],
-                
-                 
-              
-              ),
-             
-           
-          ],
-        ),
-      ),
-    );
+            ],);
   }
 }

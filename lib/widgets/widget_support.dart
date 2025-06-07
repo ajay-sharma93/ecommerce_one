@@ -30,4 +30,22 @@ class AppWidget{
        fontFamily: 'Italianno');
 
   }
+ static TextStyle lightsemiTextFieldStyle(){
+    return TextStyle(
+      color:
+       Colors.black,
+       fontSize: 18.0,
+       fontWeight: FontWeight.w100,
+       fontFamily: 'Oswald-SemiBold');
+
+  }
+ static TextStyle semiBoldTextFieldStyle(){
+    return TextStyle(
+      color:
+       Colors.black,
+       fontSize: 15.0,
+       fontWeight: FontWeight.bold,
+       fontFamily: 'Oswald-SemiBold');
+
+  }
 }

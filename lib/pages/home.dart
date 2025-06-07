@@ -130,19 +130,37 @@ class _HomeState extends State<Home> {
             ), 
             SizedBox(width: 20,), 
             Container(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset("images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+              margin: EdgeInsets.only(right: 5.5),
+              child: Material(
+                elevation: 10.0,
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset("images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+                      ),
+                     SizedBox(width: 20,),
+                     Column(children: [
+                      Container(
+                         padding: EdgeInsets.all(5),
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("Mustang Aalau marinated with spicies",style: AppWidget.semiBoldTextFieldStyle(),)),
+                        SizedBox(height:3.0,),
+                      Container(
+                         padding: EdgeInsets.all(5),
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("Authantic taste of mustang ",style: AppWidget.lightsemiTextFieldStyle(),)),  
+                       SizedBox(height:2.0,),  
+                      Container(
+                         padding: EdgeInsets.all(5),
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("\$250",style: AppWidget.semiBoldTextFieldStyle(),)),      
+                     ],)
+                    ],
                   ),
-                 SizedBox(width: 20,),
-                 Column(children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width/2,
-                    child: Text("Mustang Aalau sweetly marinated",style: AppWidget.semiBoldTextFieldStyle(),),
-                  )
-                 ],)
-                ],
+                ),
               ),
             ), 
           ],

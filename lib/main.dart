@@ -1,3 +1,5 @@
+import 'package:ecommerce/pages/bottom_navigator.dart';
+// ignore: unused_import
 import 'package:ecommerce/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Home(),
+      home: BottomNav()
     );
   
   }

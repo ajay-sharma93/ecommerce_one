@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/details.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -52,29 +53,34 @@ class _HomeState extends State<Home> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [           
-                Container(
-                  margin: EdgeInsets.all(8),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(15),
-                    elevation: 6.0,
-                    child: Container(
-                     padding: EdgeInsets.all(15),                
-                      child:                
-                      Column(               
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [                   
-                      Image.asset("images/katti_rol.png",
-                      height: 150,
-                      width: 150,
-                      fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Details()));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(8),
+                    child: Material(
+                      borderRadius: BorderRadius.circular(15),
+                      elevation: 6.0,
+                      child: Container(
+                       padding: EdgeInsets.all(15),                
+                        child:                
+                        Column(               
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [                   
+                        Image.asset("images/keema_noodles.png",
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                        ),
+                        Text("Keema Noodles",style: AppWidget.semiBoldTextFieldStyle()),
+                        SizedBox(height: 5.0,),
+                        Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                        SizedBox(height: 5.0,),
+                        Text("\$240",style: AppWidget.semiBoldTextFieldStyle()),
+                      
+                      ]),
                       ),
-                      Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
-                      SizedBox(height: 5.0,),
-                      Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
-                      SizedBox(height: 5.0,),
-                      Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
-                    
-                    ]),
                     ),
                   ),
                 ),  
@@ -88,12 +94,36 @@ class _HomeState extends State<Home> {
                     Column(               
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [                   
-                    Image.asset("images/katti_rol.png",
+                    Image.asset("images/mustang_aalu.png",
                     height: 150,
                     width: 150,
                     fit: BoxFit.cover,
                     ),
-                    Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
+                    Text("Mustang Aalu",style: AppWidget.semiBoldTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                    SizedBox(height: 5.0,),
+                    Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
+                  
+                  ]),
+                  ),
+                ),  
+                 SizedBox(width: 10,),
+                 Material(
+                  borderRadius: BorderRadius.circular(15),
+                  elevation: 6.0,
+                  child: Container(
+                   padding: EdgeInsets.all(15),                
+                    child:                
+                    Column(               
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [                   
+                    Image.asset("images/momo.png",
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                    ),
+                    Text("MO:MO",style: AppWidget.semiBoldTextFieldStyle()),
                     SizedBox(height: 5.0,),
                     Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
                     SizedBox(height: 5.0,),

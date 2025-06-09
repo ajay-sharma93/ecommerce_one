@@ -25,26 +25,44 @@ class _DetailsState extends State<Details> {
             Navigator.pop(context);
             },
             child: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.black)),
-            Image.asset("images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height/2,fit: BoxFit.fill),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+               color: Colors.blue,
+                
+                
+                elevation: 10,
+                borderRadius: BorderRadius.circular(100),
+                child: Image.asset("images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height/2,fit: BoxFit.fill)),
+            ),
             SizedBox(height: 10.0,),
             Row(
+           
+             children: [Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Keema Noodles",style: AppWidget.headlineTextFieldStyle(),),
-                    Text("Chicken",style: AppWidget.lightsemiTextFieldStyle(),),
-                      
-                  ],
-                ),
+                Text("Keema Noodles",style: AppWidget.headlineTextFieldStyle(),),
+                Text("Authenticate taste of keema & \nperfect blend of spicies",style: AppWidget.lightsemiTextFieldStyle(),)
+                ],
+             ),
+             Spacer(),
+             Container(
+              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
+              child: Icon(Icons.remove,color: Colors.white,),
+             ),
+              SizedBox(width: 20,),
+             Text("1",style: AppWidget.boldTextFieldStyle(),),
+             SizedBox(width: 20,),
+             Container(
+              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
+              child: Icon(Icons.add,color: Colors.white,),
+             ),
               
-              ],
+             ],
             ),
-                 SizedBox(height: 10.0,),
-            Container(
-              decoration: BoxDecoration(color: Colors.black),
-            child: Icon(Icons.remove,color: Colors.white,),
-                        )
+            
+                
+           
         ],),
       ),
     );

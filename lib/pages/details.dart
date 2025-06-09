@@ -81,6 +81,8 @@ class _DetailsState extends State<Details> {
               
              ],
             ),
+            SizedBox(height: 10.0,),
+            Text("Spicy, savory noodles tossed with flavorful minced meat (keema) and aromatic spices. A hearty fusion of comfort and bold taste ready to satisfy your cravings in minutes.",style: AppWidget.lightsemiTextFieldStyle(),textAlign: TextAlign.justify,)
             
                 
            

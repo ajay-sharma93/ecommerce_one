@@ -11,6 +11,8 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
+  int a =1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,16 +48,35 @@ class _DetailsState extends State<Details> {
                 ],
              ),
              Spacer(),
-             Container(
-              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
-              child: Icon(Icons.remove,color: Colors.white,),
+             GestureDetector(
+              onTap: (){
+                if (a>1) {
+                  
+                --a;
+                }
+                setState(() {
+                  
+                });
+              },
+               child: Container(
+                decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
+                child: Icon(Icons.remove,color: Colors.white,),
+               ),
              ),
               SizedBox(width: 20,),
-             Text("1",style: AppWidget.boldTextFieldStyle(),),
+             Text(a.toString(),style: AppWidget.boldTextFieldStyle(),),
              SizedBox(width: 20,),
-             Container(
-              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
-              child: Icon(Icons.add,color: Colors.white,),
+             GestureDetector(
+              onTap: (){
+                ++a;
+                setState(() {
+                  
+                });
+              },
+               child: Container(
+                decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(7)),
+                child: Icon(Icons.add,color: Colors.white,),
+               ),
              ),
               
              ],

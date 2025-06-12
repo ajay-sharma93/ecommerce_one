@@ -39,6 +39,15 @@ class AppWidget{
        fontFamily: 'Oswald-SemiBold');
 
   }
+ static TextStyle detailssemiTextFieldStyle(){
+    return TextStyle(
+      color:
+       Colors.black,
+       fontSize: 15.0,
+       fontWeight: FontWeight.bold,
+       fontFamily: 'Oswald-SemiBold');
+
+  }
  static TextStyle semiBoldTextFieldStyle(){
     return TextStyle(
       color:

@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                         Column(               
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [                   
-                        Image.asset("images/keema_noodles.png",
+                        Image.asset("assets/images/keema_noodles.png",
                         height: 150,
                         width: 150,
                         fit: BoxFit.cover,
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
                     Column(               
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [                   
-                    Image.asset("images/mustang_aalu.png",
+                    Image.asset("assets/images/mustang_aalu.png",
                     height: 150,
                     width: 150,
                     fit: BoxFit.cover,
@@ -118,7 +118,7 @@ class _HomeState extends State<Home> {
                     Column(               
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [                   
-                    Image.asset("images/momo.png",
+                    Image.asset("assets/images/momo.png",
                     height: 150,
                     width: 150,
                     fit: BoxFit.cover,
@@ -142,7 +142,7 @@ class _HomeState extends State<Home> {
                     Column(               
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [                   
-                    Image.asset("images/katti_rol.png",
+                    Image.asset("assets/images/katti_rol.png",
                     height: 150,
                     width: 150,
                     fit: BoxFit.cover,
@@ -169,7 +169,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset("images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+                      Image.asset("assets/images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
                       ),
                      SizedBox(width: 20,),
                      Column(children: [
@@ -220,7 +220,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(color: ice?Colors.black:Colors.white,borderRadius: BorderRadius.circular(8)),
                     padding: EdgeInsets.all(8),
                     // ignore: deprecated_member_use
-                    child: SvgPicture.asset('images/svg/ice.svg',height: 40,width: 40,fit: BoxFit.cover,color: ice?Colors.white:Colors.black,),
+                    child: SvgPicture.asset('assets/images/svg/ice.svg',height: 40,width: 40,fit: BoxFit.cover,color: ice?Colors.white:Colors.black,),
                   ),
                 ),
               ),
@@ -241,7 +241,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(color: burger1?Colors.black:Colors.white,borderRadius: BorderRadius.circular(8)),
                     padding: EdgeInsets.all(8),
                     // ignore: deprecated_member_use
-                    child: SvgPicture.asset('images/svg/burger1.svg',height: 40,width: 40,fit: BoxFit.cover,color: burger1?Colors.white:Colors.black,),
+                    child: SvgPicture.asset('assets/images/svg/burger1.svg',height: 40,width: 40,fit: BoxFit.cover,color: burger1?Colors.white:Colors.black,),
                   ),
                 ),
               ),
@@ -262,7 +262,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(color: salad?Colors.black:Colors.white,borderRadius: BorderRadius.circular(8)),
                     padding: EdgeInsets.all(8),
                     // ignore: deprecated_member_use
-                    child: SvgPicture.asset('images/svg/salad.svg',height: 40,width: 40,fit: BoxFit.cover,color: salad?Colors.white:Colors.black,),
+                    child: SvgPicture.asset('assets/images/svg/salad.svg',height: 40,width: 40,fit: BoxFit.cover,color: salad?Colors.white:Colors.black,),
                   ),
                 ),
               ),
@@ -283,7 +283,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(color: pizza?Colors.black:Colors.white,borderRadius: BorderRadius.circular(8)),
                     padding: EdgeInsets.all(8),
                     // ignore: deprecated_member_use
-                    child: SvgPicture.asset('images/svg/pizza.svg',height: 40,width: 40,fit: BoxFit.cover,color: pizza?Colors.white:Colors.black,),
+                    child: SvgPicture.asset('assets/images/svg/pizza.svg',height: 40,width: 40,fit: BoxFit.cover,color: pizza?Colors.white:Colors.black,),
                   ),
                 ),
               ),

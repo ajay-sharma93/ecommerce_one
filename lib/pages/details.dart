@@ -16,7 +16,9 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       body: Container(
+        
         margin: EdgeInsets.only(top: 30.0,left: 10.0,right: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +37,7 @@ class _DetailsState extends State<Details> {
                 
                 elevation: 10,
                 borderRadius: BorderRadius.circular(100),
-                child: Image.asset("images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height/2,fit: BoxFit.fill)),
+                child: Image.asset("assets/images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height/2,fit: BoxFit.fill)),
             ),
             SizedBox(height: 10.0,),
             Row(
@@ -82,11 +84,32 @@ class _DetailsState extends State<Details> {
              ],
             ),
             SizedBox(height: 10.0,),
-            Text("Spicy, savory noodles tossed with flavorful minced meat (keema) and aromatic spices. A hearty fusion of comfort and bold taste ready to satisfy your cravings in minutes.",style: AppWidget.lightsemiTextFieldStyle(),textAlign: TextAlign.justify,)
-            
-                
+            Text("Spicy, savory noodles tossed with flavorful minced meat (keema) and aromatic spices. A hearty fusion of comfort and bold taste ready to satisfy your cravings in minutes.",style: AppWidget.detailssemiTextFieldStyle(),textAlign: TextAlign.justify,maxLines: 4,
+            ),
+            SizedBox(height: 10,),
+            Row(children: [
+              Text("Delivery Time",style: AppWidget.boldTextFieldStyle(),),
+              SizedBox(width: 15,),
+              Icon(Icons.alarm,color: Colors.black54,),
+              Text("25 min ",style: AppWidget.lightsemiTextFieldStyle(),),       
+            ],),
+           Spacer(),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Row(
+               children: [
+                 Column(
+                   children: [
+                     Text("Total Price",style: AppWidget.semiBoldTextFieldStyle(),),
+                   ],
+                 ),
+               ],
+             ),
+           )
+           
            
         ],),
+           
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:ecommerce/pages/details.dart';
+import 'package:ecommerce/pages/katti_roll_screen.dart';
+import 'package:ecommerce/pages/momo_screen.dart';
 import 'package:ecommerce/pages/mustang_aalu.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +45,7 @@ class _HomeState extends State<Home> {
             Text("Delicious Food",
             style: AppWidget.headlineTextFieldStyle(),
             ),
-
+    
             Text("Discover and Get Great Food",
             style: AppWidget.lightTextFieldStyle()
             ),
@@ -116,87 +118,187 @@ class _HomeState extends State<Home> {
                                    ),
                  ),  
                  SizedBox(width: 10,),
-                 Material(
-                  borderRadius: BorderRadius.circular(15),
-                  elevation: 6.0,
-                  child: Container(
-                   padding: EdgeInsets.all(15),                
-                    child:                
-                    Column(               
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [                   
-                    Image.asset("assets/images/momo.png",
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
+                 GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MomoScreen()));
+                  },
+                   child: Material(
+                    borderRadius: BorderRadius.circular(15),
+                    elevation: 6.0,
+                    child: Container(
+                     padding: EdgeInsets.all(15),                
+                      child:                
+                      Column(               
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [                   
+                      Image.asset("assets/images/momo.png",
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.cover,
+                      ),
+                      Text("MO:MO",style: AppWidget.semiBoldTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
+                    
+                    ]),
                     ),
-                    Text("MO:MO",style: AppWidget.semiBoldTextFieldStyle()),
-                    SizedBox(height: 5.0,),
-                    Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
-                    SizedBox(height: 5.0,),
-                    Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),
-                  
-                  ]),
-                  ),
-                ),  
+                                   ),
+                 ),  
                 SizedBox(width: 15,),                        
-                 Material(
-                  borderRadius: BorderRadius.circular(15),
-                  elevation: 6.0,
-                  child: Container(
-                   padding: EdgeInsets.all(15),                
-                    child:                
-                    Column(               
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [                   
-                    Image.asset("assets/images/katti_rol.png",
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
+                 GestureDetector(
+                  onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>KattiRollScreen()));
+                  },
+                   child: Material(
+                    borderRadius: BorderRadius.circular(15),
+                    elevation: 6.0,
+                    child: Container(
+                     padding: EdgeInsets.all(15),                
+                      child:                
+                      Column(               
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [                   
+                      Image.asset("assets/images/katti_rol.png",
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.cover,
+                      ),
+                      Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
+                      SizedBox(height: 5.0,),
+                      Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),                
+                    ]),
                     ),
-                    Text("Katti Roll",style: AppWidget.semiBoldTextFieldStyle()),
-                    SizedBox(height: 5.0,),
-                    Text("Fresh and Healthy",style: AppWidget.lightsemiTextFieldStyle()),
-                    SizedBox(height: 5.0,),
-                    Text("\$300",style: AppWidget.semiBoldTextFieldStyle()),                
-                  ]),
-                  ),
-                ),  
+                                   ),
+                 ),  
               ],
               ),
             ), 
             SizedBox(width: 20,), 
-            Container(
-              margin: EdgeInsets.only(right: 5.5),
-              child: Material(
-                elevation: 10.0,
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  padding: EdgeInsets.all(5),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset("assets/images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(            
+                      margin: EdgeInsets.only(right: 5.5),
+                      child: Material(
+                        elevation: 20.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset("assets/images/mustang_aalu.png",height: 150,width: 150,fit: BoxFit.cover,
+                              ),
+                             SizedBox(width: 20,),
+                             Column(children: [
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Mustang Aalau marinated with spicies",style: AppWidget.semiBoldTextFieldStyle(),)),
+                                SizedBox(height:3.0,),
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Authantic taste of mustang ",style: AppWidget.lightsemiTextFieldStyle(),)),  
+                               SizedBox(height:2.0,),  
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("\$250",style: AppWidget.semiBoldTextFieldStyle(),
+                                ),
+                                ),      
+                             ],
+                             ),
+                            ],
+                          ),
+                        ),
                       ),
-                     SizedBox(width: 20,),
-                     Column(children: [
-                      Container(
-                         padding: EdgeInsets.all(5),
-                        width: MediaQuery.of(context).size.width/2,
-                        child: Text("Mustang Aalau marinated with spicies",style: AppWidget.semiBoldTextFieldStyle(),)),
-                        SizedBox(height:3.0,),
-                      Container(
-                         padding: EdgeInsets.all(5),
-                        width: MediaQuery.of(context).size.width/2,
-                        child: Text("Authantic taste of mustang ",style: AppWidget.lightsemiTextFieldStyle(),)),  
-                       SizedBox(height:2.0,),  
-                      Container(
-                         padding: EdgeInsets.all(5),
-                        width: MediaQuery.of(context).size.width/2,
-                        child: Text("\$250",style: AppWidget.semiBoldTextFieldStyle(),)),      
-                     ],)
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 10,),
+                     Container(            
+                      margin: EdgeInsets.only(right: 5.5),
+                      child: Material(
+                        elevation: 20.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset("assets/images/burger.png",height: 150,width: 150,fit: BoxFit.cover,
+                              ),
+                             SizedBox(width: 20,),
+                             Column(children: [
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Mustang Aalau marinated with spicies",style: AppWidget.semiBoldTextFieldStyle(),)),
+                                SizedBox(height:3.0,),
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Authantic taste of mustang ",style: AppWidget.lightsemiTextFieldStyle(),)),  
+                               SizedBox(height:2.0,),  
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("\$250",style: AppWidget.semiBoldTextFieldStyle(),
+                                ),
+                                ),      
+                             ],
+                             ),
+                            ],
+                          ),
+                        ),
+                       
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                     Container(            
+                      margin: EdgeInsets.only(right: 5.5),
+                      child: Material(
+                        elevation: 20.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset("assets/images/combo_set.png",height: 150,width: 150,fit: BoxFit.cover,
+                              ),
+                             SizedBox(width: 20,),
+                             Column(children: [
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Mustang Aalau marinated with spicies",style: AppWidget.semiBoldTextFieldStyle(),)),
+                                SizedBox(height:3.0,),
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("Authantic taste of mustang ",style: AppWidget.lightsemiTextFieldStyle(),)),  
+                               SizedBox(height:2.0,),  
+                              Container(
+                                 padding: EdgeInsets.all(5),
+                                width: MediaQuery.of(context).size.width/2,
+                                child: Text("\$250",style: AppWidget.semiBoldTextFieldStyle(),
+                                ),
+                                ),      
+                             ],
+                             ),
+                            ],
+                          ),
+                        ),
+                       
+                      ),
+                    ),
+              
+                  ],
                 ),
               ),
             ), 

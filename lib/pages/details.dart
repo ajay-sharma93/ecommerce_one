@@ -109,7 +109,7 @@ class _DetailsState extends State<Details> {
                  
                  Container(
                   width: MediaQuery.of(context).size.width/3,
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(5.0),
                   decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.circular(20)),
                   child:
                    Row(
@@ -125,7 +125,7 @@ class _DetailsState extends State<Details> {
                       child: Icon(Icons.shopping_cart_rounded,color: Colors.red,),)
                   ],),
                   
-                 )
+                 ),
                ],
              ),
            )

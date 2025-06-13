@@ -35,9 +35,12 @@ class _LoginState extends State<Login> {
               decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50))),
               child: Text(""),
               ),
-              Column(children: [
-                Image.asset("assets/images/")
-              ],)
+              Container(
+                margin: EdgeInsets.only(bottom: 50.0),
+                child: Column(children: [
+                  Center(child: Image.asset("assets/images/logo.png",width: MediaQuery.of(context).size.width/2,fit: BoxFit.cover,))
+                ],),
+              )
               
            
         ],

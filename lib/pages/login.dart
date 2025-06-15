@@ -13,7 +13,8 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(      
+      body: Container( 
+        padding: EdgeInsets.symmetric(),     
         child: Stack(
         children: [
           Container(
@@ -69,9 +70,9 @@ class _LoginState extends State<Login> {
                           padding: EdgeInsets.symmetric(vertical: 10.0),
                           alignment: Alignment.topRight,
                           child: Text("Forget Password?",style: AppWidget.lightTextFieldStyle(),)),
-                          SizedBox(height: 15,),
+                          SizedBox(height: 5,),
                           Material(
-                            elevation: 20,
+                            elevation: 5,
                             borderRadius: BorderRadius.circular(10),
                             child: Container(                                                   
                               width: MediaQuery.of(context).size.width,                        
@@ -91,7 +92,7 @@ class _LoginState extends State<Login> {
                     },
                     child: Text("Don't have an account? SignUp click here..",style: AppWidget.semiBoldTextFieldStyle(),)),
                 ],),
-              )
+              ),
               
            
         ],

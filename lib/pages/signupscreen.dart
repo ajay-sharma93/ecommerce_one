@@ -52,7 +52,7 @@ class _SignupscreenState extends State<Signupscreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 5.0,),
-                          Text("Sign Up",style: AppWidget.headlineTextFieldStyle(),
+                          Text("Sign Up",style:TextStyle(color: Colors.white,fontSize: 18),
                            ),
                           
                          TextField(
@@ -93,7 +93,7 @@ class _SignupscreenState extends State<Signupscreen> {
                     onTap: (){
                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
                     },
-                    child: Text(" Login Page",style: AppWidget.semiBoldTextFieldStyle(),)),
+                    child: Text("Already have an account? Login",style: AppWidget.semiBoldTextFieldStyle(),)),
                 ],),
               ),
               

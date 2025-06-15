@@ -16,7 +16,9 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       body: Container(
+        
         margin: EdgeInsets.only(top: 30.0,left: 10.0,right: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +37,7 @@ class _DetailsState extends State<Details> {
                 
                 elevation: 10,
                 borderRadius: BorderRadius.circular(100),
-                child: Image.asset("images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height/2,fit: BoxFit.fill)),
+                child: Image.asset("assets/images/keema_noodles.png",width: MediaQuery.of(context).size.width,height: 250,fit: BoxFit.fill)),
             ),
             SizedBox(height: 10.0,),
             Row(
@@ -65,7 +67,7 @@ class _DetailsState extends State<Details> {
              ),
               SizedBox(width: 20,),
              Text(a.toString(),style: AppWidget.boldTextFieldStyle(),),
-             SizedBox(width: 20,),
+             SizedBox(width: 10,),
              GestureDetector(
               onTap: (){
                 ++a;
@@ -82,11 +84,55 @@ class _DetailsState extends State<Details> {
              ],
             ),
             SizedBox(height: 10.0,),
-            Text("Spicy, savory noodles tossed with flavorful minced meat (keema) and aromatic spices. A hearty fusion of comfort and bold taste ready to satisfy your cravings in minutes.",style: AppWidget.lightsemiTextFieldStyle(),textAlign: TextAlign.justify,)
-            
-                
+            Text("Spicy, savory noodles tossed with flavorful minced meat (keema) and aromatic spices. A hearty fusion of comfort and bold taste ready to satisfy your cravings in minutes.",textAlign: TextAlign.justify,maxLines: 4,),
+           
+            SizedBox(height: 30,),
+            Row(children: [
+              Text("Delivery Time",style: AppWidget.boldTextFieldStyle(),),
+              SizedBox(width: 15,),
+              Icon(Icons.alarm,color: Colors.black54,),
+              Text("25 min ",style: AppWidget.lightsemiTextFieldStyle(),),       
+            ],),
+           Spacer(),
+           Padding(
+             padding: const EdgeInsets.only(bottom: 50.0),
+             child: Row(
+              
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Text("Total Price",style: AppWidget.semiBoldTextFieldStyle(),),
+                     Text("Rs ${240 * a}",style: AppWidget.semiBoldTextFieldStyle(),),
+                   ],),
+                 
+                 Container(
+                  width: MediaQuery.of(context).size.width/3,
+                  padding: EdgeInsets.all(5.0),
+                  decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.circular(20)),
+                  child:
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [                   
+                    Text("Add to Cart",style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: 'Poppins'),),
+                    SizedBox(width: 5,),
+                    Container(
+                      padding: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Colors.white,borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Icon(Icons.shopping_cart_rounded,color: Colors.red,),)
+                  ],),
+                  
+                 ),
+               ],
+             ),
+           )
+           
            
         ],),
+           
       ),
     );
   }

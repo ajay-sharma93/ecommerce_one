@@ -1,3 +1,4 @@
+import 'package:ecommerce/widgets/content_model.dart';
 import 'package:flutter/material.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -33,7 +34,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
       body: Column(children: [
         PageView.builder(
           controller: _controller,  
-          i      
+          itemCount:contents.length,      
           itemBuilder: (_,i){
           return Padding(padding: EdgeInsets.all(20),
           child: Column(children: [],),

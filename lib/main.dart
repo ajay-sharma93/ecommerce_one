@@ -2,7 +2,9 @@
 import 'package:ecommerce/pages/bottom_navigator.dart';
 // ignore: unused_import
 import 'package:ecommerce/pages/home.dart';
+// ignore: unused_import
 import 'package:ecommerce/pages/login.dart';
+import 'package:ecommerce/pages/onboard_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Login()
+      home: OnboardScreen(),
     );
   
   }

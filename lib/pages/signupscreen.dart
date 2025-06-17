@@ -1,5 +1,7 @@
 import 'package:ecommerce/pages/login.dart';
+import 'package:ecommerce/widgets/content_model.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Signupscreen extends StatefulWidget {
@@ -10,6 +12,26 @@ class Signupscreen extends StatefulWidget {
 }
 
 class _SignupscreenState extends State<Signupscreen> {
+
+
+
+  String email="",password="",name="";
+
+  TextEditingController nameController=new TextEditingController();
+  TextEditingController passwordController=new TextEditingController();
+  TextEditingController mailController=new TextEditingController();
+
+
+
+  registration()async{
+    if(password!=null){
+      try{
+        UserCredential userCredential=await FirebaseAuth.instance.createUserWithEmailAndPassword(email:email,password:password);
+        ScaffoldMessenger.of(context).showSnackBar((SnackBar(content: Text("Your Account is Successfully Registered!!",style: TextStyle(fontSize: 22),),)));
+      }
+    }
+  
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

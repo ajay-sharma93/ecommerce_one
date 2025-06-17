@@ -45,13 +45,33 @@ class _OnboardScreenState extends State<OnboardScreen> {
             },     
             itemBuilder: (_,i){
             return Padding(padding: EdgeInsets.all(20),
-            child: Column(children: [
-              Image.asset(contents[i].image,height: 350,width: MediaQuery.of(context).size.width,fit: BoxFit.fill,),
-              SizedBox(height: 40.0,),
-              Center(child: Text(contents[i].title,style: AppWidget.semiBoldTextFieldStyle(),)),
-              SizedBox(height: 40.0,),
-              Text(contents[i].description,style: AppWidget.detailssemiTextFieldStyle(),),
-          
+            child: Column(
+             
+              children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Image.asset(
+                  
+                  contents[i].image,
+                  height: 420,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.fill,
+                  ),
+              ),
+              SizedBox(
+                height: 40.0,
+                ),
+              Text(
+              contents[i].title,
+              style: AppWidget.semiBoldTextFieldStyle(),
+              ),
+              SizedBox(height: 20.0,),
+              Center(
+                child: Text(
+                  contents[i].description,
+                style: AppWidget.lightsemiTextFieldStyle(),
+                ),
+              ),
             ],
             ),
             );
@@ -60,9 +80,9 @@ class _OnboardScreenState extends State<OnboardScreen> {
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: 
-            List.generate(contents.length, (index)=>
-              buildDot(index,context),
+            children: List.generate(
+              contents.length,            
+            (index)=>buildDot(index,context),  
             ),         
           ),
         ),
@@ -74,11 +94,25 @@ class _OnboardScreenState extends State<OnboardScreen> {
             _controller.nextPage(duration:Duration(milliseconds: 100), curve: Curves.bounceIn);
           },
           child: Container(
-            decoration: BoxDecoration(color: Colors.red),
+            
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.red),
+            
             height: 60,
             margin: EdgeInsets.all(40),
             width: double.infinity,
-            child: Text("NEXT",style: TextStyle(color: Colors.white),),
+            child: Center(child:            
+            Text(
+              
+             currentIndex==contents.length-1?"START": "NEXT",
+              style: TextStyle(             
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+                ),
+                ),
+                ),
           ),
         )
       ],),
@@ -86,10 +120,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
   }
   Container buildDot(int index,BuildContext context){
     return Container(
-      height: 10.0,
+      height: 15.0,
       width:currentIndex==index?18:7,
-      margin: EdgeInsets.only(right: 5),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(6)),
+      margin: EdgeInsets.only(right: 5),  
+      decoration: BoxDecoration(
+        color: currentIndex==index?Colors.red:Colors.grey,
+        borderRadius: BorderRadius.circular(10)),
     );
   }
 }

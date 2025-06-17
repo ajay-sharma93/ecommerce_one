@@ -67,11 +67,8 @@ class _SignupscreenState extends State<Signupscreen> {
                           obscureText: true,
                             decoration: InputDecoration(hintText: 'Password',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.lock)),
                          ),
-                         SizedBox(height: 5,),
-                        Container(                   
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                          alignment: Alignment.topRight,
-                          child: Text("Forget Password?",style: AppWidget.lightTextFieldStyle(),)),
+                         SizedBox(height: 40,),
+                        
                           
                           Material(
                             elevation: 5,

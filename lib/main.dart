@@ -5,11 +5,12 @@ import 'package:ecommerce/pages/home.dart';
 // ignore: unused_import
 import 'package:ecommerce/pages/login.dart';
 import 'package:ecommerce/pages/onboard_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  a
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

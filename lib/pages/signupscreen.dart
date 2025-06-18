@@ -1,5 +1,4 @@
 import 'package:ecommerce/pages/login.dart';
-import 'package:ecommerce/widgets/content_model.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,23 +16,58 @@ class _SignupscreenState extends State<Signupscreen> {
 
   String email="",password="",name="";
 
-  TextEditingController nameController=new TextEditingController();
-  TextEditingController passwordController=new TextEditingController();
-  TextEditingController mailController=new TextEditingController();
+  TextEditingController nameController= TextEditingController();
+  TextEditingController passwordController= TextEditingController();
+  TextEditingController mailController= TextEditingController();
 
+
+  final _formkey=GlobalKey<FormState>();
 
 
   registration()async{
+    // ignore: unnecessary_null_comparison
     if(password!=null){
       try{
-        UserCredential userCredential=await FirebaseAuth.instance.createUserWithEmailAndPassword(email:email,password:password);
-        ScaffoldMessenger.of(context).showSnackBar((SnackBar(content: Text("Your Account is Successfully Registered!!",style: TextStyle(fontSize: 22),),)));
+        ScaffoldMessenger.of(context).showSnackBar((SnackBar(
+          backgroundColor: Colors.orange,
+          
+          content: Text("Your Account is Successfully Registered!!",style: TextStyle(fontSize: 22),),)));
+      }on FirebaseException catch(e){
+        if(e.code=='weak password'){
+          ScaffoldMessenger.of(context).showSnackBar(
+            
+            SnackBar(
+              backgroundColor: Colors.orange,
+              content: 
+            Text(
+              "Your Password is Weak"
+              )));
+        }
+        
+      else if(e.code=="email-already-in-use"){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.orange,
+          content: Text("Account Already Exist",
+          style: TextStyle(fontSize: 20.0
+          ),
+          )));
       }
+
+      }
+
+      }
+      
     }
+    
+      @override
+      Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+      }
   
   }
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, dynamic _formkey) {
     return Scaffold(
       body: Container( 
         padding: EdgeInsets.symmetric(),     
@@ -70,40 +104,47 @@ class _SignupscreenState extends State<Signupscreen> {
                       padding: EdgeInsets.only(left: 20.0,right: 20.0), 
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height/2.6,
-                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 5.0,),
-                          Text("Sign Up",style:TextStyle(color: Colors.white,fontSize: 18),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: 
+                        BorderRadius.circular(10)),
+                      child: Form(
+                        key: _formkey,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 5.0,),
+                            Text("Sign Up",style:TextStyle(color: Colors.white,fontSize: 18),
+                             ),
+                            
+                           TextFormField(
+                            controller: nameController,
+                              decoration: InputDecoration(hintText: 'Name',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.person)),
                            ),
+                           SizedBox(height: 5,),
+                           TextFormField(
+                              decoration: InputDecoration(hintText: 'Email',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.email)),
+                           ),
+                           SizedBox(height: 5,),
+                           TextFormField(
+                            obscureText: true,
+                              decoration: InputDecoration(hintText: 'Password',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.lock)),
+                           ),
+                           SizedBox(height: 40,),
                           
-                         TextField(
-                            decoration: InputDecoration(hintText: 'Name',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.person)),
-                         ),
-                         SizedBox(height: 5,),
-                         TextField(
-                            decoration: InputDecoration(hintText: 'Email',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.email)),
-                         ),
-                         SizedBox(height: 5,),
-                         TextField(
-                          obscureText: true,
-                            decoration: InputDecoration(hintText: 'Password',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.lock)),
-                         ),
-                         SizedBox(height: 40,),
-                        
-                          
-                          Material(
-                            elevation: 5,
-                            borderRadius: BorderRadius.circular(10),
-                            child: Container(                                                   
-                              width: MediaQuery.of(context).size.width,                        
-                              decoration: BoxDecoration(color: Color(0xFFff5c30),borderRadius: BorderRadius.circular(10),),
-                              child: Center(child: Text("SIGN UP",style: TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.w600),)),
+                            
+                            Material(
+                              elevation: 5,
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(                                                   
+                                width: MediaQuery.of(context).size.width,                        
+                                decoration: BoxDecoration(color: Color(0xFFff5c30),borderRadius: BorderRadius.circular(10),),
+                                child: Center(child: Text("SIGN UP",style: TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.w600),)),
+                              ),
                             ),
-                          ),
-                         
-                         ],
-                         ),
+                           
+                           ],
+                           ),
+                      ),
                       
                     ),
                   ),
@@ -121,4 +162,3 @@ class _SignupscreenState extends State<Signupscreen> {
       ),),
     );
   }
-}

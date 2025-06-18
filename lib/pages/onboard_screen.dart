@@ -77,6 +77,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
             );
           }),
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

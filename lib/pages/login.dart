@@ -46,8 +46,7 @@ class _LoginState extends State<Login> {
                     elevation: 10.0,
                     borderRadius: BorderRadius.circular(20.0),
                     child: Container(
-                      padding: EdgeInsets.only(left: 20.0,right: 20.0),
-                      
+                      padding: EdgeInsets.only(left: 20.0,right: 20.0), 
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height/2.6,
                       decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(10)),
@@ -90,7 +89,7 @@ class _LoginState extends State<Login> {
                     onTap: (){
                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Signupscreen()));
                     },
-                    child: Text("Don't have an account? SignUp click here..",style: AppWidget.semiBoldTextFieldStyle(),)),
+                    child: Text("Don't have an account? Sign Up ",style: AppWidget.semiBoldTextFieldStyle(),)),
                 ],),
               ),
               

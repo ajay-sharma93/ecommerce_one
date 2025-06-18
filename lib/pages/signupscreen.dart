@@ -1,5 +1,7 @@
 import 'package:ecommerce/pages/login.dart';
+import 'package:ecommerce/widgets/content_model.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Signupscreen extends StatefulWidget {
@@ -10,6 +12,26 @@ class Signupscreen extends StatefulWidget {
 }
 
 class _SignupscreenState extends State<Signupscreen> {
+
+
+
+  String email="",password="",name="";
+
+  TextEditingController nameController=new TextEditingController();
+  TextEditingController passwordController=new TextEditingController();
+  TextEditingController mailController=new TextEditingController();
+
+
+
+  registration()async{
+    if(password!=null){
+      try{
+        UserCredential userCredential=await FirebaseAuth.instance.createUserWithEmailAndPassword(email:email,password:password);
+        ScaffoldMessenger.of(context).showSnackBar((SnackBar(content: Text("Your Account is Successfully Registered!!",style: TextStyle(fontSize: 22),),)));
+      }
+    }
+  
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +74,7 @@ class _SignupscreenState extends State<Signupscreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 5.0,),
-                          Text("Sign Up",style: AppWidget.headlineTextFieldStyle(),
+                          Text("Sign Up",style:TextStyle(color: Colors.white,fontSize: 18),
                            ),
                           
                          TextField(
@@ -67,11 +89,8 @@ class _SignupscreenState extends State<Signupscreen> {
                           obscureText: true,
                             decoration: InputDecoration(hintText: 'Password',hintStyle: AppWidget.lightTextFieldStyle(),prefixIcon: Icon(Icons.lock)),
                          ),
-                         SizedBox(height: 5,),
-                        Container(                   
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                          alignment: Alignment.topRight,
-                          child: Text("Forget Password?",style: AppWidget.lightTextFieldStyle(),)),
+                         SizedBox(height: 40,),
+                        
                           
                           Material(
                             elevation: 5,
@@ -93,7 +112,7 @@ class _SignupscreenState extends State<Signupscreen> {
                     onTap: (){
                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
                     },
-                    child: Text(" Login Page",style: AppWidget.semiBoldTextFieldStyle(),)),
+                    child: Text("Already have an account? Login",style: AppWidget.semiBoldTextFieldStyle(),)),
                 ],),
               ),
               

@@ -1,4 +1,4 @@
-import 'package:ecommerce/pages/signupscreen.dart';
+
 import 'package:ecommerce/widgets/widget_support.dart';
 import 'package:flutter/material.dart';
 
@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                   ),
                    GestureDetector(
                     onTap: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Signupscreen()));
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
                     },
                     child: Text("Don't have an account? Sign Up ",style: AppWidget.semiBoldTextFieldStyle(),)),
                 ],),

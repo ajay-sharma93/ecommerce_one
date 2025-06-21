@@ -1,3 +1,5 @@
+
+// ignore: unused_import
 import 'package:ecommerce/pages/signupscreen.dart';
 import 'package:ecommerce/widgets/content_model.dart';
 import 'package:ecommerce/widgets/widget_support.dart';
@@ -77,6 +79,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
             );
           }),
         ),
+        // ignore: avoid_unnecessary_containers
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

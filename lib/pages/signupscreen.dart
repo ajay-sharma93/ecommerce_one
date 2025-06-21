@@ -118,9 +118,10 @@ class _SignupscreenState extends State<Signupscreen> {
                             ),
                             TextFormField(
                               controller: nameController,
+                              
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please Enter E-mail';
+                                  return 'Please Enter Your Name';
                                 }
                                 return null;
                               },
@@ -134,6 +135,13 @@ class _SignupscreenState extends State<Signupscreen> {
                               height: 5,
                             ),
                             TextFormField(
+                              controller: mailController,
+                              validator:(value) {
+                                if(value==null||value.isEmpty){
+                                  return 'Please Enter Your Email';
+                              }
+                                  return null;
+                              },
                               decoration: InputDecoration(
                                   hintText: 'Email',
                                   hintStyle:
@@ -144,6 +152,8 @@ class _SignupscreenState extends State<Signupscreen> {
                               height: 5,
                             ),
                             TextFormField(
+                              
+                              controller: passwordController,
                               obscureText: true,
                               decoration: InputDecoration(
                                   hintText: 'Password',

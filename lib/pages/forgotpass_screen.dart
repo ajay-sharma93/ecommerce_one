@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/signupscreen.dart';
 import 'package:flutter/material.dart';
 
 class ForgotpassScreen extends StatefulWidget {
@@ -70,9 +71,22 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
               ],
             ),
           ),
-       )
-  )],),));
-   
-    
+       )),
+      SizedBox(height: 30.0,),
+      Row(
+        children: [
+          Text("Don't have an Account?",style: TextStyle(fontSize: 18.0,color: Colors.white),),
+          SizedBox(width: 10.0,),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Signupscreen()));
+            },
+            child: Text("Create",style: TextStyle(color: Color.fromARGB(255, 184, 166, 6),fontWeight: FontWeight.bold),))
+        ],
+      )
+         ],
+      ),
+   ),
+);  
   }
 }

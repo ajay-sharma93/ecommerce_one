@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/forgotpass_screen.dart';
 import 'package:ecommerce/pages/signupscreen.dart';
 import 'package:ecommerce/pages/bottom_navigator.dart';
 // ignore: unused_import
@@ -78,7 +79,7 @@ class _LoginState extends State<Login> {
             ),
             Container(
               margin: EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
-              child: SingleChildScrollView( // ✅ Fixes overflow
+              child: SingleChildScrollView( 
                 child: Column(
                   children: [
                     SizedBox(height: 40),
@@ -135,11 +136,16 @@ class _LoginState extends State<Login> {
                                     prefixIcon: Icon(Icons.lock)),
                               ),
                               SizedBox(height: 10),
-                              Container(
-                                padding: EdgeInsets.symmetric(vertical: 10.0),
-                                alignment: Alignment.topRight,
-                                child: Text("Forget Password?",
-                                    style: AppWidget.lightTextFieldStyle()),
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotpassScreen()));
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                                  alignment: Alignment.topRight,
+                                  child: Text("Forget Password?",
+                                      style: AppWidget.lightTextFieldStyle()),
+                                ),
                               ),
                               SizedBox(height: 5),
                               GestureDetector(

@@ -27,7 +27,7 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password Reset Email has been sent Successfully!!",style: TextStyle(fontWeight: FontWeight.bold),)));
     } on FirebaseAuthException catch(e){
-      if(e.code=="user is not available"){
+      if(e.code=="user-not-found"){
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("No User Found",style: TextStyle(fontSize: 18.0))));
       }
     }

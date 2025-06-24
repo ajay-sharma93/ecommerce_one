@@ -10,6 +10,10 @@ class Wallet extends StatefulWidget {
 class _WalletState extends State<Wallet> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text("This is the wallet Screen  !!"),
+      ),
+    );
   }
 }

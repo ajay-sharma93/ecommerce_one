@@ -1,4 +1,7 @@
 import 'package:ecommerce/pages/signupscreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// ignore: unused_import
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class ForgotpassScreen extends StatefulWidget {
@@ -6,11 +9,29 @@ class ForgotpassScreen extends StatefulWidget {
 
   @override
   State<ForgotpassScreen> createState() => _ForgotpassScreenState();
+
+  
 }
 
 class _ForgotpassScreenState extends State<ForgotpassScreen> {
   // ignore: unnecessary_new
   TextEditingController mailController = new TextEditingController();
+
+  String email="";
+
+  final _formkey=GlobalKey<FormState>();
+
+
+  resetPassword()async{
+    try{
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Password Reset Email has been sent Successfully!!",style: TextStyle(fontWeight: FontWeight.bold),)));
+    } on FirebaseAuthException catch(e){
+      if(e.code=="user is not available"){
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("No User Found",style: TextStyle(fontSize: 18.0))));
+      }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,10 +47,18 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
           fontWeight: FontWeight.bold),),
         ),
         SizedBox(height: 10,),
-        Text("Enter Your Mail",style: TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.bold
-        
+        Text("Enter Your Mail",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold 
         ),),
-         Expanded(child: Form(child: Padding(padding: EdgeInsets.only(left:10 ),
+
+         Expanded(
+          child: Form(
+            key: _formkey,
+            child: Padding(
+              padding: EdgeInsets.only(left:10 ),
          child: ListView(children: [
           Container(
             padding: EdgeInsets.only(left: 10.0),
@@ -55,26 +84,31 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
             ),
           ),
           SizedBox(height: 40.0,),
-         
-        
-                Container(                
-                  width: 140,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Center(
-                    child: Text("Send Email",style: TextStyle(color: Colors.black,fontSize: 18,fontWeight:FontWeight.bold),),
+                GestureDetector(
+                  onTap: (){
+                    if(_formkey.currentState!.validate()){
+                      setState(() {
+                        email=mailController.text;
+                      });
+                      resetPassword();
+                    }
+                  },
+                  child: Container(                
+                    width: 140,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Center(
+                      child: Text("Send Email",style: TextStyle(color: Colors.black,fontSize: 18,fontWeight:FontWeight.bold),),
+                    ),
                   ),
                 ),
-              ],
-            ),
-          ),
-       )),
-      SizedBox(height: 30.0,),
+                 SizedBox(height: 30.0,),
       Row(
-        children: [
+        mainAxisAlignment:MainAxisAlignment.center,
+        children: [       
           Text("Don't have an Account?",style: TextStyle(fontSize: 18.0,color: Colors.white),),
           SizedBox(width: 10.0,),
           GestureDetector(
@@ -83,7 +117,12 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
             },
             child: Text("Create",style: TextStyle(color: Color.fromARGB(255, 184, 166, 6),fontWeight: FontWeight.bold),))
         ],
-      )
+      ),
+              ],
+            ),
+          ),
+       )),
+     
          ],
       ),
    ),

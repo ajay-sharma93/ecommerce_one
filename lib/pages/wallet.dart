@@ -20,14 +20,15 @@ class _WalletState extends State<Wallet> {
         child: Container(
           padding: EdgeInsets.only(bottom: 10.0),
           child: Center(child: Text("Wallet",style: AppWidget.boldTextFieldStyle(),)))),
+          SizedBox(height: 20,),
           Container(
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(color: Color(0xFFF2F2F2)),
-            child: Row(children: [
-            
-          ],),)
-    ],),),
-    
+            child: Row(            
+              children: [
+            Image.asset("assets/images/wallet.png",width: 100,height:60,fit:BoxFit.cover,),
+                      ],),)
+    ],),), 
     );
   }
 }

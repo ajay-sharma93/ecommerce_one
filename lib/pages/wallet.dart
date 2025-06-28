@@ -106,12 +106,15 @@ class _WalletState extends State<Wallet> {
             ],),
           SizedBox(height: 20,),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 3),
+            margin: EdgeInsets.symmetric(horizontal:10),
+            padding: EdgeInsets.symmetric(vertical: 9),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 0, 78, 157)
+              color: Color.fromARGB(255, 0, 78, 157),
+              borderRadius: BorderRadius.circular(10)
             ),
-          )
+            child: Center(child: Text("Add Money",style: TextStyle(color: Color.fromARGB(255, 244, 243, 243),fontSize: 18.0,fontWeight: FontWeight.bold),),),
+          ),
     ],),), 
     );
   }
